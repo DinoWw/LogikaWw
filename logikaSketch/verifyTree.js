@@ -369,20 +369,3 @@ function verifyTree(tree, validated, startIndex){
 
 }
 
-
-
-/* 
-Gracin - wise words
-
-a kako je umjesto dine mogao stajati bilo tko
-
-dino se ne javlja u pretpostavkama
-
-
-
-
-
-Egz 
-  ante je nova konstanta (ne uu pretpostavkama)
-  u sudu koji izvodimo se ne javlja ante
-*/

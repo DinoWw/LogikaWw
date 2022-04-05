@@ -342,12 +342,9 @@ class Branch{
 		return false;
 	}
 
-
-
-	//if calling with active pointer, make sure that this.actveHeight and this.replaceMode are defined
+	//if calling with topLevelFeatures = true, make sure that this.actveHeight and this.replaceMode are defined
 	displaySelf(numbered = false, topLevelFeatures = false){
 		
-
 		textSize(0.8);
 		strokeWeight(0.1);
 
@@ -358,9 +355,7 @@ class Branch{
 
 			text('>', 0.5, this.activeHeight);
 			text('v', 1.4 + this.activeDepth*0.2, -1);
-		
 		}
-
 
 		if(numbered){
 			push();
@@ -410,11 +405,10 @@ class Branch{
 
 		translate(0, this.getHeight());
 
-		//cite sources
+		//cite sources if topLevelFeatures
 		if(!topLevelFeatures){return;}
 
 		pop();
-
 
 		fill(0, 0, 0);
 		for(let i = 0; i < this.getHeight(); i++){
@@ -433,19 +427,3 @@ class Branch{
 
 }
 
-
-
-/*
-clipboard
-
-
-			textAlign(RIGHT, TOP);
-			text(`${this.assumptions[0].stringOfMetadata()}`, 12, 0);
-
-
-				textAlign(RIGHT, TOP);
-				text(`${element.stringOfMetadata()}`, 12, 0);
-
-
-
-*/

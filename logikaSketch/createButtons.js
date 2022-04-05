@@ -71,9 +71,9 @@ function createButtons(){
   posY ++;
   list['d1'] = buttonFromParams('d1', '[<]', defaultButtonWidth, ...coordsFromPos(posX, posY));
   posY ++;
-  list['d2'] = buttonFromParams('d2', '[v]', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['d2'] = buttonFromParams('d3', '[>]', defaultButtonWidth, ...coordsFromPos(posX, posY));
   posY ++;
-  list['d3'] = buttonFromParams('d2', '[>]', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['d3'] = buttonFromParams('d2', '[v]', defaultButtonWidth, ...coordsFromPos(posX, posY));
   posY ++;
   list['mode'] = buttonFromParams('mode', 'mode', defaultButtonWidth, ...coordsFromPos(posX, posY));
   posY ++;
@@ -90,10 +90,10 @@ function createButtons(){
       list[i].color = "#FFFF00";
       list[i].onPress = inputHandler;
       list[i].onHover = function(){
-        rect(mouseX, mouseY, 120, 200);
+        rect(mouseX - 120, mouseY, 120, 180);
         text(`yellow (default) - insert mode - will insert the next expression below the pointer
 
-          blue - replace mode - will replace the expresson of the current line`, mouseX + 10, mouseY + 10, 100, 300);
+          blue - replace mode - will replace the expresson of the current line`, mouseX + 10 - 120, mouseY + 10, 100, 300);
       }
       continue;
     }
