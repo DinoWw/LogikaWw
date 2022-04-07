@@ -47,7 +47,7 @@ function draw() {
     //console.log(mainBranch);
   }
 
-
+ 
   
 
   push();
@@ -60,6 +60,6 @@ function draw() {
 
 
 
-  text("LogicChecker V002.031; experimental build", 0, 700);
+  text("LogicChecker V002.032; experimental build", 0, 700);
 
 }

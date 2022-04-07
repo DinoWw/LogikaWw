@@ -141,9 +141,9 @@ class Expression{
 
 	}
 
-	//ALL below is part of an attempt to get partial and steppable input working
-	
 	copy(){
+		//this likely keeps ponters to arguments and should be done recursively
+
 		return new Expression(this.operator, ...this.argumentList);
 		//
 	}
