@@ -70,7 +70,6 @@ class Expression{
 		return true;
 	}
 
-	//needs fixing
 	stringOfSelf(){
 
 		let argumentStrings = [];
