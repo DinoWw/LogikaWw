@@ -33,7 +33,7 @@ function setup() {
 
   const parseExpression = createParser();
   console.log(parseExpression);
-  const trialExpression = parseExpression("A*B>A+C");
+  const trialExpression = parseExpression("A*(B>A)+C");
   console.log(trialExpression);
   console.log(trialExpression.stringOfSelf());
 
@@ -71,6 +71,6 @@ function draw() {
 
 
 
-  text("LogicChecker V002.033; experimental build", 0, 700);
+  text("LogicChecker V002.034; experimental build", 0, 700);
 
 }
