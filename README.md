@@ -1,4 +1,4 @@
-# LogikaWw_promjenjeno 2
+# LogikaWw
 
 
 
