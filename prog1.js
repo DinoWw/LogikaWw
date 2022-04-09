@@ -21,7 +21,6 @@ function handleRequest(req, res) {
   // If blank let's ask for index.html
   if (pathname == '/') {
     pathname = '/index.html';
-    console.log('You done did it');
   }
 
 

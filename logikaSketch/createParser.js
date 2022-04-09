@@ -4,7 +4,7 @@ function createParser(){
 	//really think about how much you have messed up by representing quantificators with A and E
 	//like really consider how dumb you are
 	//fix it
-	const opOrder = ['$', '%', '>', '+', '*', '-'];		//$ => A;    % => E   		//so dumb, but I dont see a lazier way to do it
+	const opOrder = ['>', '+', '*', '$', '%', '-'];		//$ => A;    % => E   		//so dumb, but I dont see a lazier way to do it
 
 	const operators = {
 		binary_A : ['>', '+', '*'] ,	//AoB

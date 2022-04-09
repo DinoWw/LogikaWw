@@ -15,6 +15,15 @@ let mainBranch;
 let buttonList = {};
 
 
+//redo, this is here only to better understand html n stuff
+const inputField = document.getElementById("stringInput");
+const flushButton = document.getElementById("flush");
+flushButton.onclick = function(){
+  console.log(inputField.value);
+}
+
+
+
 
 function setup() {
   createCanvas(700, 700);
@@ -70,6 +79,14 @@ function draw() {
 
 
 
-  text("LogicChecker V002.034; experimental build", 0, 700);
+  text("LogicChecker V002.035; experimental build", 0, 700);
 
 }
+
+
+
+/*
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+*/
