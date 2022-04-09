@@ -4,9 +4,13 @@ function createParser(){
 	//really think about how much you have messed up by representing quantificators with A and E
 	//like really consider how dumb you are
 	//fix it
-	const opOrder = [/*'A', 'E'*/, '>', '+', '*', '-'];//no quantificators for you
+	const opOrder = ['$', '%', '>', '+', '*', '-'];		//$ => A;    % => E   		//so dumb, but I dont see a lazier way to do it
 
-
+	const operators = {
+		binary_A : ['>', '+', '*'] ,	//AoB
+		binary_B : ['$', '%'] ,			//oAB
+		unary	 : ['-'] ,				//oA
+	}
 
 
 	const parse = function(parseString){
@@ -14,9 +18,6 @@ function createParser(){
 			parseString = parseString.slice(1, -1);
 		}
 
-		if(parseString.length == 1){
-			return new Expression('0', parseString);
-		}
 
 		//bad time and operation complexity
 		for(let j = 0; j < opOrder.length; j ++){
@@ -38,13 +39,19 @@ function createParser(){
 
 
 				if(activeChar == operator){
-					return new Expression(activeChar, parse(parseString.slice(0, i)), parse(parseString.slice(i+1, parseString.length)));
+					if(operators.binary_A.includes(operator)){
+						return new Expression(activeChar, parse(parseString.slice(0, i)), parse(parseString.slice(i+1, parseString.length)));
+					} else if (operators.binary_B.includes(operator)){
+						return new Expression({'$':'A', '%':'E'}[activeChar], parseString[i+1], parse(parseString.slice(i+2, parseString.length)))
+					} else if (operators.unary.includes(operator)){
+						return new Expression(activeChar, parse(parseString.slice(i+1, parseString.length)));		//this is a weird way to write it as when calling upon negation, it should only ever be possivle that i = 0
+					}
+					console.log('createParser.js has some problems with the list constants');
 				}
 			}
 		}
 
-		console.log(`Parser broke: ${parseString}`);
-		return false;
+		return new Expression('0', ...parseString);
 	}
 
 	return parse;

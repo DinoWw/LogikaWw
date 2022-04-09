@@ -115,7 +115,7 @@ class Expression{
 
 			case 'A':
 			case 'E':
-				return `${Expression.expressionMap[this.operator]}${argumentStrings[0]}${argumentStrings[1]}`;
+				return `(${Expression.expressionMap[this.operator]}${argumentStrings[0]}${argumentStrings[1]})`;
 				break;
 
 

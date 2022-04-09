@@ -32,8 +32,7 @@ function setup() {
   //parser testing below, delete after
 
   const parseExpression = createParser();
-  console.log(parseExpression);
-  const trialExpression = parseExpression("A*(B>A)+C");
+  const trialExpression = parseExpression("Aa*-(Bc>A)+Cxy+$x(Fx*%y(Gxy))");
   console.log(trialExpression);
   console.log(trialExpression.stringOfSelf());
 
