@@ -343,7 +343,7 @@ class Expression{
 			if(this.argumentList[0] == expression.argumentList[0]){
 				return this.argumentList[1].firstDifferentVariable(expression.argumentList[1]);
 			}
-			return false;
+			return true;
 		}
 
 
