@@ -325,6 +325,8 @@ class Expression{
 
 	//returns the variable form the expression in the argument
 	firstDifferentVariable(expression){
+
+		//equals part inefficient as only the first recursive itereation is this needed.
 		if(!this.equals(expression, true)){
 			return false;			//expressions different, aborting
 		}
@@ -338,9 +340,10 @@ class Expression{
 			return true;			//expressions same, aborting
 		}
 		if('AE'.includes(this.operator)){
-			console.log("this shouldn't ever be logged (I think), fix in firstDifferentVariable in Expression.js")
-			//I dont think it should be allowed to find diferrences in quantificators as they shouldn't change
-			//return false; //?????
+			if(this.argumentList[0] == expression.argumentList[0]){
+				return this.argumentList[1].firstDifferentVariable(expression.argumentList[1]);
+			}
+			return false;
 		}
 
 
