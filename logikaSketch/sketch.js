@@ -29,6 +29,16 @@ function setup() {
   mainBranch.activeHeight = -1;
   mainBranch.replaceMode = false;
 
+  //parser testing below, delete after
+
+  const parseExpression = createParser();
+  const trialExpression = parseExpression("Aa*-(Bc>A)+Cxy+$x(Fx*%y(Gxy))");
+  console.log(trialExpression);
+  console.log(trialExpression.stringOfSelf());
+
+
+
+
 }
 
 function draw() {
@@ -60,6 +70,6 @@ function draw() {
 
 
 
-  text("LogicChecker V002.033; experimental build", 0, 700);
+  text("LogicChecker V002.034; experimental build", 0, 700);
 
 }
