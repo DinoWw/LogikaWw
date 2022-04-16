@@ -15,13 +15,14 @@ let mainBranch;
 let buttonList = {};
 
 
-//redo, this is here only to better understand html n stuff
-const inputField = document.getElementById("stringInput");
-const flushButton = document.getElementById("flush");
-flushButton.onclick = function(){
-  console.log(inputField.value);
-}
-
+//This should Likely be done in a more sensical matter
+const parse = createParser();
+const parseInput = document.getElementById("parseInput");
+const parseFlush = document.getElementById("parseFlush");
+parseFlush.onclick = function(){
+  console.log(parse(parseInput.value));
+  mainBranch.getFromIndex(mainBranch.activeHeight + int(!mainBranch.replaceMode)).expression = parse(parseInput.value);
+};
 
 
 
@@ -40,11 +41,12 @@ function setup() {
 
   //parser testing below, delete after
 
+  /*
   const parseExpression = createParser();
   const trialExpression = parseExpression("Aa*-(Bc>A)+Cxy+$x(Fx*%y(Gxy))");
   console.log(trialExpression);
   console.log(trialExpression.stringOfSelf());
-
+*/
 
 
 
@@ -78,8 +80,12 @@ function draw() {
 
 
 
+<<<<<<< HEAD
 
   text("LogicChecker V002.035; experimental build", 0, 700);
+=======
+  text("LogicChecker V002.034; experimental build", 0, 700);
+>>>>>>> 2adf5d17ee15682f69376b3230fa802eb2d34603
 
 }
 

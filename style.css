@@ -1,0 +1,21 @@
+
+/*input {
+	display: inline-block;
+	width: 20%;
+}
+*/
+
+
+#parseInput{
+	display: inline-block;
+	vertical-align: middle;
+	width: 40%;
+	height: 20px;
+}
+
+#parseFlush{
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height:  20px;
+}
