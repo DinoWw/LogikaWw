@@ -15,6 +15,17 @@ let mainBranch;
 let buttonList = {};
 
 
+//This should Likely be done in a more sensical matter
+const parse = createParser();
+const parseInput = document.getElementById("parseInput");
+const parseFlush = document.getElementById("parseFlush");
+parseFlush.onclick = function(){
+  console.log(parse(parseInput.value));
+  mainBranch.getFromIndex(mainBranch.activeHeight + int(!mainBranch.replaceMode)).expression = parse(parseInput.value);
+};
+
+
+
 
 function setup() {
   createCanvas(700, 700);
@@ -31,11 +42,12 @@ function setup() {
 
   //parser testing below, delete after
 
+  /*
   const parseExpression = createParser();
   const trialExpression = parseExpression("Aa*-(Bc>A)+Cxy+$x(Fx*%y(Gxy))");
   console.log(trialExpression);
   console.log(trialExpression.stringOfSelf());
-
+*/
 
 
 
@@ -66,7 +78,6 @@ function draw() {
   //mainBranch.displaySelf(true);
   mainBranch.displaySelf(true, true);
   pop();
-
 
 
 
