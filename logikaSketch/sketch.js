@@ -80,12 +80,7 @@ function draw() {
 
 
 
-<<<<<<< HEAD
-
-  text("LogicChecker V002.035; experimental build", 0, 700);
-=======
-  text("LogicChecker V002.034; experimental build", 0, 700);
->>>>>>> 2adf5d17ee15682f69376b3230fa802eb2d34603
+  text("LogicChecker V002.036; experimental build", 0, 700);
 
 }
 
