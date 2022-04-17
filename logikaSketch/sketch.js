@@ -27,7 +27,8 @@ parseFlush.onclick = function(){
 
 
 function setup() {
-  createCanvas(700, 700);
+  var canvas = createCanvas(700, 700);
+  canvas.parent('p5canvas');
   
 
   mainBranch = new Branch();
