@@ -13,12 +13,13 @@ function createButtons(){
     creatingButton.label = label;
     creatingButton.text = text;
     creatingButton.resize(size, size);
-    creatingButton.locate(x, y);
+    creatingButton.pos = {'x': x, 'y' : y}
+    creatingButton.locate(...coordsFromPos(x, y));
     return creatingButton;
   }
 
   const coordsFromPos = function(x, y){
-    return [width - posX*defaultButtonWidth - 5*posX, 5+posY*(defaultButtonWidth + 5)];
+    return [width - x*defaultButtonWidth - 5*x, 5+y*(defaultButtonWidth + 5)];
   }
 
 
@@ -27,25 +28,25 @@ function createButtons(){
 
   for(let label of Object.keys(Expression.expressionMap)){
     if('ao'.includes(label)){continue;}
-    list[label] = buttonFromParams(label, Expression.expressionMap[label], defaultButtonWidth, ...coordsFromPos(posX, posY));
+    list[label] = buttonFromParams(label, Expression.expressionMap[label], defaultButtonWidth, posX, posY);
     posY ++;
   }
   for(let i = "A".charCodeAt(0); i < "A".charCodeAt(0)+5; i++){
     let label = "0" + String.fromCharCode(i);
-    list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, ...coordsFromPos(posX, posY));
+    list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, posX, posY);
     posY ++;
 
   }
   //variables
   for(let i = "a".charCodeAt(0); i < "a".charCodeAt(0)+5; i++){
     let label = "v" + String.fromCharCode(i);
-    list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, ...coordsFromPos(posX, posY));
+    list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, posX, posY);
     posY ++;
 
   }
   for(let i = "x".charCodeAt(0); i < "x".charCodeAt(0)+3; i++){
     let label = "v" + String.fromCharCode(i);
-    list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, ...coordsFromPos(posX, posY));
+    list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, posX, posY);
     posY ++;
 
   }
@@ -53,7 +54,7 @@ function createButtons(){
   posX++;
   for(let method of Object.keys(Statement.sourceAmount)){
     let label = method;
-    list[label] = buttonFromParams(label, `${method[0]}. ${Expression.expressionMap[method[1]]}`, defaultButtonWidth, ...coordsFromPos(posX, posY));
+    list[label] = buttonFromParams(label, `${method[0]}. ${Expression.expressionMap[method[1]]}`, defaultButtonWidth, posX, posY);
     posY ++;
   }
 
@@ -61,23 +62,23 @@ function createButtons(){
   posX ++;
   for(let number = 1; number <= 17; number ++){
     let label = number;
-    list[label] = buttonFromParams(label, number, defaultButtonWidth, ...coordsFromPos(posX, posY));
+    list[label] = buttonFromParams(label, number, defaultButtonWidth, posX, posY);
     posY ++;
   }
 
   posY = 0
   posX++;
-  list['d0'] = buttonFromParams('d0', '[^]', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['d0'] = buttonFromParams('d0', '[^]', defaultButtonWidth, posX, posY);
   posY ++;
-  list['d1'] = buttonFromParams('d1', '[<]', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['d1'] = buttonFromParams('d1', '[<]', defaultButtonWidth, posX, posY);
   posY ++;
-  list['d2'] = buttonFromParams('d3', '[>]', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['d2'] = buttonFromParams('d3', '[>]', defaultButtonWidth, posX, posY);
   posY ++;
-  list['d3'] = buttonFromParams('d2', '[v]', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['d3'] = buttonFromParams('d2', '[v]', defaultButtonWidth, posX, posY);
   posY ++;
-  list['mode'] = buttonFromParams('mode', 'mode', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['mode'] = buttonFromParams('mode', 'mode', defaultButtonWidth, posX, posY);
   posY ++;
-  list['del'] = buttonFromParams('del', 'del', defaultButtonWidth, ...coordsFromPos(posX, posY));
+  list['del'] = buttonFromParams('del', 'del', defaultButtonWidth, posX, posY);
   posY ++;
 
   posY = 0;
