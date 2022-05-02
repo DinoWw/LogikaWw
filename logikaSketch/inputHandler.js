@@ -34,7 +34,7 @@ function generateInputHandler(mainBranch){
 			}
 
 			//could find a better place for this, but it works now so....
-			resizeHandler();
+			//resizeHandler();
 			
 		} else if("ui".includes(this.label[0])){
 			mainBranch.getFromIndex(mainBranch.activeHeight).method = this.label;
