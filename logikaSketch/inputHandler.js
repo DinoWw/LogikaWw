@@ -32,6 +32,9 @@ function generateInputHandler(mainBranch){
 			if(expressionCache.full){
 				mainBranch.activeHeight += int(!mainBranch.replaceMode);
 			}
+
+			//could find a better place for this, but it works now so....
+			resizeHandler();
 			
 		} else if("ui".includes(this.label[0])){
 			mainBranch.getFromIndex(mainBranch.activeHeight).method = this.label;

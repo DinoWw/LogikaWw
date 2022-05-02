@@ -1,14 +1,5 @@
 
 
-//TODO update index.html on outside of folder for ease of running
-
-// http://localhost:8001/logikaSketch/index.html
-
-
-
-
-
-
 
 let mainBranch;
 
@@ -27,7 +18,7 @@ parseFlush.onclick = function(){
 
 
 function setup() {
-  var canvas = createCanvas(700, 700);
+  var canvas = createCanvas(max(windowWidth-30, 700), max(windowHeight-85, 700));
   canvas.parent('p5canvas');
   
 
@@ -81,14 +72,10 @@ function draw() {
 
 
 
-  text("LogicChecker V002.036; experimental build", 0, 700);
+  text("LogicChecker V002.037; experimental build", 0, height);
 
 }
 
-
-
-/*
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeHandler();
 }
-*/
