@@ -31,17 +31,6 @@ function setup() {
   mainBranch.activeHeight = -1;
   mainBranch.replaceMode = false;
 
-  //parser testing below, delete after
-
-  /*
-  const parseExpression = createParser();
-  const trialExpression = parseExpression("Aa*-(Bc>A)+Cxy+$x(Fx*%y(Gxy))");
-  console.log(trialExpression);
-  console.log(trialExpression.stringOfSelf());
-*/
-
-
-
 }
 
 function draw() {
@@ -53,11 +42,11 @@ function draw() {
   }
 
   if(frameCount % 30 == 0){
-    //verifyTree(mainBranch, {}, 1);
     console.log('------------');
     verifyTree(mainBranch, {}, 1);
-    //console.log('__');
-    //console.log(mainBranch);
+
+    //could find a better place for this, but it works now so....
+    resizeHandler();
   }
 
  
@@ -66,7 +55,6 @@ function draw() {
   push();
   translate(0, 40);
   scale(40);
-  //mainBranch.displaySelf(true);
   mainBranch.displaySelf(true, true);
   pop();
 
