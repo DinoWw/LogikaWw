@@ -32,7 +32,7 @@ function generateInputHandler(mainBranch){
 			if(expressionCache.full){
 				mainBranch.activeHeight += int(!mainBranch.replaceMode);
 			}
-
+			
 			
 		} else if("ui".includes(this.label[0])){
 			mainBranch.getFromIndex(mainBranch.activeHeight).method = this.label;

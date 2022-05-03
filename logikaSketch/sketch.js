@@ -11,6 +11,10 @@ const parse = createParser();
 const parseInput = document.getElementById("parseInput");
 const parseFlush = document.getElementById("parseFlush");
 parseFlush.onclick = function(){
+  //delete this if statement soon after, just an easter egg for a thing im doing
+  if(parseInput.value == "2523"){
+    parseInput.value = "Sam mi reci prek discorda da si uspio, keyword: PALACINKA (tako da znam da si zapravo uspio) ((ako ova poruka nije za tebe fukof))";
+  }
   console.log(parse(parseInput.value));
   mainBranch.getFromIndex(mainBranch.activeHeight + int(!mainBranch.replaceMode)).expression = parse(parseInput.value);
 };
@@ -60,7 +64,7 @@ function draw() {
 
 
 
-  text("LogicChecker V002.038; experimental build", 0, height);
+  text("LogicChecker V002.039; experimental build", 0, height);
 
 }
 
