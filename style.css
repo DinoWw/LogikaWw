@@ -5,6 +5,9 @@
 }
 */
 
+/*for measuring string length*/
+#ruler { visibility: hidden; white-space: nowrap; }
+
 
 #parseInput{
 	display: inline-block;

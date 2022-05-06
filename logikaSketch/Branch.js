@@ -410,11 +410,14 @@ class Branch{
 
 		pop();
 
+
+		let maxElementScaledLength = Math.max(...Array.from(Array(this.height).fill().map((x,i)=>i), x => this.getFromIndex(x).expression.scaledLength));
+		
 		fill(0, 0, 0);
 		for(let i = 0; i < this.getHeight(); i++){
 			let element = this.getFromIndex(i);
 			textAlign(RIGHT, TOP);
-			text(`${element.stringOfMetadata()}`, 13, 0);
+			text(`${element.stringOfMetadata()}`, 2.5 + maxElementScaledLength*.055, 0);
 			translate(0, 1);
 		}
 

@@ -14,3 +14,11 @@ function resizeHandler(){
 	}
 
 }
+
+
+String.prototype.visualLength = function()
+{
+    var ruler = document.getElementById("ruler");
+    ruler.innerHTML = this;
+    return ruler.offsetWidth;
+}

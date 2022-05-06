@@ -188,6 +188,12 @@ class Expression{
 		return false;
 	}
 
+
+	get scaledLength(){
+		return this.stringOfSelf().visualLength();
+	}
+
+
 	//returns true if argument has been found a place in the expression
 	insertArgument(argument){
 		if(this.full){
