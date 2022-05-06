@@ -38,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-  background(200, 200, 255);
+  background(200, 230, 255);
 
 
   for(let buttonKey of Object.keys(buttonList)){
@@ -64,7 +64,7 @@ function draw() {
 
 
 
-  text("LogicChecker V002.039; experimental build", 0, height);
+  text("LogicChecker V002.042; experimental build", 0, height);
 
 }
 
