@@ -88,7 +88,7 @@ function createButtons(){
 
   for(let i of Object.keys(list)){
     if(list[i].label == 'mode'){
-      list[i].color = "#FFFF00";
+      list[i].color = "#ffff00";
       list[i].onPress = inputHandler;
       list[i].onHover = function(){
         rect(mouseX - 120, mouseY, 120, 180);
@@ -107,7 +107,7 @@ function createButtons(){
     list[i].onPress = inputHandler;
 
     list[i].onOutside = function(){
-      this.color = "#FFFFFF";
+      this.color = "#b4b4c8";
     };
 
   }

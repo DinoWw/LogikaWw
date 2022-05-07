@@ -1,6 +1,5 @@
 class Branch{
 	type = "Branch";
-		
 
 	constructor(...assumptions){
 
@@ -347,10 +346,16 @@ class Branch{
 		
 		textSize(0.8);
 		strokeWeight(0.1);
-
+	
 		textAlign(RIGHT, TOP);
 
+		let text_color = color(180,180,200);
+		let green_color = color(0, 170, 90);
+		let red_color = color(170,0,90);
+		
+
 		if(topLevelFeatures){
+			fill(text_color);
 			push();	//to match the pop at the end for citing sources
 
 			text('>', 0.5, this.activeHeight);
@@ -368,16 +373,19 @@ class Branch{
 		}
 
 		push();
-
+		stroke(text_color);
 		line(0, 0, 0, this.getHeight() - .15); //long vertical line
+		noStroke();
 
-		fill(0, 150, 0); //assumptionns always green
+		fill(green_color); //assumptionns always green
 		if(this.assumptions.length != 0){
 			translate(0.2, 0);
 			textAlign(LEFT, TOP);
 			text(`${this.assumptions[0].expression.stringOfSelf()}`, 0, 0);
 			translate(0, 1);
+			stroke(text_color);
 			line(-.2, -0.15, .8, -0.15);
+			noStroke();
 		}
 
 		translate(-0.2, 0);
@@ -389,9 +397,9 @@ class Branch{
 
 			if(element.type == 'Statement'){
 				if(element.valid){
-					fill(0, 150, 0); //valid ones green
+					fill(green_color); //valid ones green
 				} else {
-					fill(150, 0, 0); //invalid ones red
+					fill(red_color); //invalid ones red
 				}
 				textAlign(LEFT, TOP);
 				text(`${element.expression.stringOfSelf()}`, 0, 0);
@@ -412,8 +420,8 @@ class Branch{
 
 
 		let maxElementScaledLength = Math.max(...Array.from(Array(this.height).fill().map((x,i)=>i), x => this.getFromIndex(x).expression.scaledLength + 3*this.getDepthOfIndex(x)));
-
-		fill(0, 0, 0);
+		
+		//fill(text_color);
 		for(let i = 0; i < this.getHeight(); i++){
 			let element = this.getFromIndex(i);
 			textAlign(RIGHT, TOP);
