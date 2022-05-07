@@ -421,7 +421,6 @@ class Branch{
 
 		let maxElementScaledLength = Math.max(...Array.from(Array(this.height).fill().map((x,i)=>i), x => this.getFromIndex(x).expression.scaledLength + 3*this.getDepthOfIndex(x)));
 		
-		//fill(text_color);
 		for(let i = 0; i < this.getHeight(); i++){
 			let element = this.getFromIndex(i);
 			textAlign(RIGHT, TOP);
