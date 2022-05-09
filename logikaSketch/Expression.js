@@ -321,12 +321,55 @@ class Expression{
 			}
 
 		}
-
-
-
-
 		return replaced;
 	}
+
+
+	// checks if whenever a variable form this expression is different from the variable
+	// in the same place in comparingExpression, that the variable form this expression
+	// is Va and the variable form comparingExpression is Vb
+	checkIfReplacedOnDifference(comparingExpression, Va, Vb){
+
+		if(!this.equals(comparingExpression, true)){
+			return false;
+		}
+
+		if(this.operator == '0'){
+			for(let i = 1; i < this.argumentList.length; i++){
+				console.log(this.argumentList[i], Va, comparingExpression.argumentList[i], Vb);
+				if(this.argumentList[i] == Va && !(comparingExpression.argumentList[i] == Vb || comparingExpression.argumentList[i] == Va)){
+					return false;
+				}
+
+				if(this.argumentList[i] != comparingExpression.argumentList[i]){
+					if(!(this.argumentList[i] == Va && comparingExpression.argumentList[i] == Vb)){
+						return false;
+					}
+				}
+
+
+			}
+		} else if('AE'.includes(replaced.operator)){
+			if(this.argumentList[0] != comparingExpression.argumentList[0]){
+				return false;
+			}
+			return this.argumentList[1].checkIfReplacedOnDifference(comparingExpression.argumentList[1], Va, Vb);
+		} else {
+			for(let i = 0; i < replaced.argumentList.length; i++){
+				if(this.argumentList[i] instanceof Expression){
+					if(!this.argumentList[i].checkIfReplacedOnDifference(comparingExpression.argumentList[i], Va, Vb)){
+						return false;
+					}
+				}else{
+					console.log('Expression.js checkIfReplacedOnDifference silent error');
+				}
+			}
+
+		}
+		return true;
+
+	}
+
 
 	//returns the variable form the expression in the argument
 	firstDifferentVariable(expression){
