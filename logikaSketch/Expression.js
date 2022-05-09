@@ -336,7 +336,6 @@ class Expression{
 
 		if(this.operator == '0'){
 			for(let i = 1; i < this.argumentList.length; i++){
-				console.log(this.argumentList[i], Va, comparingExpression.argumentList[i], Vb);
 				if(this.argumentList[i] == Va && !(comparingExpression.argumentList[i] == Vb || comparingExpression.argumentList[i] == Va)){
 					return false;
 				}
