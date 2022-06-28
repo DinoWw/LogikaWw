@@ -9,4 +9,4 @@ Run using: `node prog1.js`
 Please report bugs on the 'issues' tab of this gitHub page
 
 
-If you already have a webiste, the only relevant files are inside the /LogikaWw directory, including an index.html file.
+If you already have a webiste, the only relevant files are inside the `/logikaWw` directory, including an `index.html` file.
