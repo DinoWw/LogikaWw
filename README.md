@@ -6,6 +6,7 @@ Code for a website which allows the validation of logic conclusions. Currently h
 
 Run using: `node prog1.js`
 
-The code is still incomplete and likely full of undiscovered bugs and you are on your own in figuring out all the quirks of my brilliant input method and in which order you nedd to press the buttons. Please report bugs on the 'issues' tab of this gitHub page
+Please report bugs on the 'issues' tab of this gitHub page
 
-GL HF
+
+If you already have a webiste, the only relevant files are inside the /LogikaWw directory, including an index.html file.
