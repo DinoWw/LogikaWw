@@ -1,0 +1,24 @@
+
+/*input {
+	display: inline-block;
+	width: 20%;
+}
+*/
+
+/*for measuring string length*/
+#ruler { visibility: hidden; white-space: nowrap; }
+
+
+#parseInput{
+	display: inline-block;
+	vertical-align: middle;
+	width: 670px;
+	height: 20px;
+}
+
+#parseFlush{
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height:  20px;
+}
