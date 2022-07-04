@@ -1,3 +1,8 @@
+# Depricated
+The active directory is https://github.com/DinoWw/LogikaWw_new
+
+
+
 # LogikaWw
 
 
