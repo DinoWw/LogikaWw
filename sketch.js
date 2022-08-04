@@ -11,10 +11,7 @@ const parse = createParser();
 const parseInput = document.getElementById("parseInput");
 const parseFlush = document.getElementById("parseFlush");
 parseFlush.onclick = function(){
-  //delete this if statement soon after, just an easter egg for a thing im doing
-  if(parseInput.value == "2523"){
-    parseInput.value = "Sam mi reci prek discorda da si uspio, nisam stigo napavit automatizirano :|, keyword: PALACINKA (tako da znam da si zapravo uspio) ((ako ova poruka nije za tebe fukof))";
-  }
+ 
   console.log(parse(parseInput.value));
   mainBranch.getFromIndex(mainBranch.activeHeight + int(!mainBranch.replaceMode)).expression = parse(parseInput.value);
 };
