@@ -14,10 +14,29 @@ class Statement{
     'i>': 2,
     //'u=': 2,
     //'i=': 2,
-    'uA': 1,
+    'uA': 1,  //http://kgracin.com/logika/ndPravilaTeoremi.pdf kaze da su 2, ali jedan je zapravo nepotreban
     'iA': 1,
     'uE': 1,
     'iE': 3,
+  }
+  static methodFormat = {
+    'ua': "",
+    'uo': "",
+    'ux': ",",
+    'u-': "-",
+    'i-': "",
+    'u+': "",
+    'i+': ",-,-",
+    'u*': ",",
+    'i*': "",
+    'u>': "-",
+    'i>': ",",
+    //'u=': 2,
+    //'i=': 2,
+    'uA': "",
+    'iA': "",
+    'uE': "",
+    'iE': ",-",
   }
 
   type = "Statement";
@@ -47,7 +66,12 @@ class Statement{
       return `p.`;
     }
     
-    return `${this.sources} ${this.method[0]} ${Expression.expressionMap[this.method[1]]}`;
+    //add appropreate symbols betweewn numbers, "" if the symbol is undefined (end of string from Statement.methodFormat)
+    let formattedSources = this.sources.map((x, i) => `${x}${Statement.methodFormat[this.method][i] || ""}`);
+    formattedSources = formattedSources.join("");
+
+
+    return `${formattedSources} ${this.method[0]} ${Expression.expressionMap[this.method[1]]}`;
   }
 
   addSource(n){
