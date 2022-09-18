@@ -6,6 +6,8 @@ let mainBranch;
 let buttonList = {};
 
 
+let  inputHandler;
+
 //This should Likely be done in a more sensical matter
 const parse = createParser();
 const parseInput = document.getElementById("parseInput");
@@ -25,12 +27,15 @@ function setup() {
 
   mainBranch = new Branch();
 
-  buttonList = createButtons();
+  inputHandler = generateInputHandler(mainBranch)
+  buttonList = createButtons(inputHandler);
 
 
   mainBranch.activeDepth = 0;
   mainBranch.activeHeight = -1;
   mainBranch.replaceMode = false;
+
+
 
 }
 
@@ -56,7 +61,7 @@ function draw() {
   push();
   translate(0, 40);
   scale(40);
-  mainBranch.displaySelf(true, true);
+  mainBranch.displaySelf(true, true, buttonList, 40, inputHandler);
   pop();
 
 

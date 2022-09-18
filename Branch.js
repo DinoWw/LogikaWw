@@ -342,7 +342,7 @@ class Branch{
 	}
 
 	//if calling with topLevelFeatures = true, make sure that this.actveHeight and this.replaceMode are defined
-	displaySelf(numbered = false, topLevelFeatures = false){
+	displaySelf(numbered = false, topLevelFeatures = false, buttonList = {}, buttonScale = 1, inputHandler = undefined){
 		
 		textSize(0.8);
 		strokeWeight(0.1);
@@ -367,6 +367,28 @@ class Branch{
 			for(let i = 1; i <= this.getHeight(); i++){
 				text(i, 1, 0);
 				translate(0, 1);
+
+				//creating the trasparent buttons over the numbers
+				if(topLevelFeatures){
+					//if button already exists, don't create it again
+					if(!(parseInt(`999${i}`) in buttonList)){
+
+						let creatingButton = new Clickable();
+				    creatingButton.label = i;
+				    creatingButton.color = "#00000000";		//alpha 0
+				    creatingButton.strokeWeight = 0;
+				    creatingButton.text = "";
+				    creatingButton.resize(2*buttonScale, 1*buttonScale);
+				    //creatingButton.pos = {'x': 0.5, 'y' : i}
+				    creatingButton.locate(0.1*buttonScale, (i-0.1)*buttonScale);
+				    creatingButton.onPress = inputHandler;
+						
+						//prefix their names with 999 so they don't overwrite those on the right side of the screen ( ingenius, I know :/ ), sucks if you want to have more than 999 lines tho
+						buttonList[parseInt(`999${i}`)] = creatingButton;
+					}
+				}
+
+
 			}
 			pop();
 			translate(1.2, 0);

@@ -1,11 +1,10 @@
-function createButtons(){
+function createButtons(inputHandler){
 
 	let list = [];
 
   let posY = 0;
   let posX = 1;
   let defaultButtonWidth = 30;
-  const inputHandler = generateInputHandler(mainBranch);
   //let creatingButton;
 
   const buttonFromParams = function(label, text, size, x, y){
@@ -60,7 +59,7 @@ function createButtons(){
 
   posY = 0;
   posX ++;
-  for(let number = 1; number <= 17; number ++){
+  for(let number = 1; number <= 15; number ++){
     let label = number;
     list[label] = buttonFromParams(label, number, defaultButtonWidth, posX, posY);
     posY ++;
