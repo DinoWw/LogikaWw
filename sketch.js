@@ -66,7 +66,6 @@ function draw() {
 
 
 
-  text("LogicChecker V002.044; experimental build", 0, height);
 
 }
 

@@ -30,14 +30,19 @@ function createButtons(inputHandler){
     list[label] = buttonFromParams(label, Expression.expressionMap[label], defaultButtonWidth, posX, posY);
     posY ++;
   }
-  for(let i = "A".charCodeAt(0); i < "A".charCodeAt(0)+5; i++){
+
+  posY = 0;
+  posX++;   
+  for(let i = "A".charCodeAt(0); i < "A".charCodeAt(0)+8; i++){
     let label = "0" + String.fromCharCode(i);
     list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, posX, posY);
     posY ++;
 
   }
+  posY = 0;
+  posX++;   
   //variables
-  for(let i = "a".charCodeAt(0); i < "a".charCodeAt(0)+5; i++){
+  for(let i = "a".charCodeAt(0); i < "a".charCodeAt(0)+8; i++){
     let label = "v" + String.fromCharCode(i);
     list[label] = buttonFromParams(label, String.fromCharCode(i), defaultButtonWidth, posX, posY);
     posY ++;
