@@ -325,7 +325,7 @@ class Expression{
 	}
 
 
-	// checks if whenever a variable form this expression is different from the variable
+	// checks whenever a variable form this expression is different from the variable
 	// in the same place in comparingExpression, that the variable form this expression
 	// is Va and the variable form comparingExpression is Vb
 	checkIfReplacedOnDifference(comparingExpression, Va, Vb){
@@ -348,13 +348,13 @@ class Expression{
 
 
 			}
-		} else if('AE'.includes(replaced.operator)){
+		} else if('AE'.includes(this.operator)){
 			if(this.argumentList[0] != comparingExpression.argumentList[0]){
 				return false;
 			}
 			return this.argumentList[1].checkIfReplacedOnDifference(comparingExpression.argumentList[1], Va, Vb);
 		} else {
-			for(let i = 0; i < replaced.argumentList.length; i++){
+			for(let i = 0; i < this.argumentList.length; i++){
 				if(this.argumentList[i] instanceof Expression){
 					if(!this.argumentList[i].checkIfReplacedOnDifference(comparingExpression.argumentList[i], Va, Vb)){
 						return false;
