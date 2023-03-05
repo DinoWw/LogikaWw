@@ -1,5 +1,5 @@
 function resizeHandler(){
-	let desiredX = max(windowWidth-30, 700);
+	let desiredX = max(windowWidth, 700);
 	let desiredY = max(windowHeight-55, max(40*mainBranch.getHeight() + 45, 700));
 
 	if(width != desiredX || height != desiredY){

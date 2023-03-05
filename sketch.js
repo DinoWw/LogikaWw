@@ -21,7 +21,7 @@ parseFlush.onclick = function(){
 
 
 function setup() {
-  var canvas = createCanvas(max(windowWidth-30, 700), max(windowHeight-85, 700));
+  var canvas = createCanvas(max(windowWidth, 700), max(windowHeight-85, 700));
   canvas.parent('p5canvas');
   
 

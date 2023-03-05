@@ -22,3 +22,15 @@
 	width: 20px;
 	height:  20px;
 }
+
+.p5Canvas{
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid black;
+}
+
+.no-margin{
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid black;
+}
