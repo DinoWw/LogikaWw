@@ -1,5 +1,5 @@
-# LogikaWw_new
-Updated repository for github.com/DinoWw/LogikaWw, now containing only the relevant code
+# LogikaWw
+Updated repository for github.com/DinoWw/LogikaWw_old, now containing only the relevant code
 
 Code  which allows the validation of logic conclusions. Currently hosted on netwwork.duckdns.org.
 
